@@ -54,7 +54,7 @@ wear[c(-1,-2,-3),] -> wear
 colnames(wear) <- wear[1,]
 wear[-1,] -> wear
 wear %>% 
-  mutate(series = seq(1, nrow(wear)),
+  mutate(series = as.numeric(RelativeCS) + 1,
          time_stamp = as.numeric(AbsoluteCS)) %>% 
   select(series, time_stamp, all_of(variable)) -> wear
 cat("finish tidy! \n")
@@ -64,3 +64,42 @@ write.csv(x = wear,
           file = paste(output_position, "/data.csv", sep = ""),
           row.names = FALSE)
 cat("finish output!\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Su Xu
